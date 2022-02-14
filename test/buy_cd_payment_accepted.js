@@ -6,10 +6,25 @@ describe("Buy CD - Payment accepted", () => {
     const payments = { accepted : function(creditCard) {
         this.creditCard = creditCard;
         return true;
-    }}    
-    const cd = new CD(payments, 3);
+    }};
+    const shipping = {
+        generateNotes : function(artist, title, quantity, customerName, deliveryAddress) {
+            this.shippingNote = {
+                artist: artist,
+                title: title,
+                quantity: quantity,
+                customer_name: customerName,
+                delivery_address: deliveryAddress
+            }
+        }
+    };
+    const cd = new CD(payments, shipping, 3, "The Beatles", "Help!");
     const creditCard = "1323947238414";
-    cd.buy(2, creditCard);
+    const customerInfo = {
+        name: "PJ Sinohin",
+        address: "Los Banos"
+    };
+    cd.buy(2, creditCard, customerInfo);
 
     it("deducts sale from CD stock", () => {
         assert.strictEqual(1,cd.getStock()); 
@@ -17,5 +32,15 @@ describe("Buy CD - Payment accepted", () => {
 
     it("uses customer's credit card", () => {
         assert.strictEqual(creditCard,payments.creditCard);
+    })
+
+    it("creates a shipping note", () => {
+        assert.deepStrictEqual({
+            artist: "The Beatles",
+            title: "Help!",
+            quantity: 2,
+            customer_name: "PJ Sinohin",
+            delivery_address: "Los Banos"
+        }, cd.shipping.shippingNote);
     })
 })
