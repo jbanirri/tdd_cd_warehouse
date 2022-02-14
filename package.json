@@ -1,0 +1,23 @@
+{
+  "name": "tdd_cd_warehouse-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbanirri/tdd_cd_warehouse.git"
+  },
+  "author": "j.bantay@irri.org",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbanirri/tdd_cd_warehouse/issues"
+  },
+  "homepage": "https://github.com/jbanirri/tdd_cd_warehouse#readme",
+  "dependencies": {
+    "mocha": "^9.2.0",
+    "nyc": "^15.1.0"
+  }
+}
