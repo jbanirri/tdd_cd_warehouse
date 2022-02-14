@@ -1,8 +1,12 @@
 class Numeral {
     convertToRoman(integer) {
-        if(integer<=3) {
-            return "I".repeat(integer);
+        let result = '';
+        while(integer > 0) {
+            result = result.concat('I');
+            integer -= 1;
         }
+
+        return result;
     }
 }
 
