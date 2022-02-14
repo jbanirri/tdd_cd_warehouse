@@ -32,10 +32,6 @@ class CD {
         }
         customer.purchaseList.push(item)
     }
-
-    getStock() {
-        return this.stock; 
-    }
 }
 
 module.exports = CD;

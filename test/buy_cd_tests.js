@@ -72,4 +72,12 @@ describe("Buy CD - Payment rejected", () => {
     it("does NOT deduct sale from CD stock", () => {
         assert.strictEqual(3,cd.stock); 
     })
+
+    it("does NOT create shipping note", () => {
+        assert.strictEqual(undefined, cd.shipping.shippingNote); 
+    })
+
+    it("does NOT add to purchase list", () => {
+        assert.strictEqual(0, customer.purchaseList.length); 
+    })
 })
