@@ -6,7 +6,11 @@ class Numeral {
             let numeralVal = 'I';
             decrease = 1
 
-            if(integer >= 10) {
+            if(integer === 40) {
+                decrease = integer;
+                numeralVal = 'XL';
+            }
+            else if(integer >= 10) {
                 decrease = 10;
                 numeralVal = 'X';
             }

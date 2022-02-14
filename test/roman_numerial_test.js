@@ -20,7 +20,8 @@ describe("Convert interger to roman numerals", () => {
         { integer: 14, numeral: "XIV"},
         { integer: 19, numeral: "XIX"},
         { integer: 20, numeral: "XX"},
-        { integer: 39, numeral: "XXXIX"}
+        { integer: 39, numeral: "XXXIX"},
+        { integer: 40, numeral: "XL"}
     ].forEach(({integer,numeral}) => {
         it(`converts ${integer} to ${numeral}`, () => {
             assert.strictEqual(num.convertToRoman(integer), numeral);
