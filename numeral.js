@@ -1,7 +1,7 @@
 class Numeral {
     convertToRoman(integer) {
         if(integer<=3) {
-            return "I".repeat(integer)
+            return "I".repeat(integer);
         }
     }
 }
