@@ -33,7 +33,8 @@ describe("Convert interger to roman numerals", () => {
         { integer: 400, numeral: "CD"},
         { integer: 499, numeral: "CDXCIX"},
         { integer: 500, numeral: "D"},
-        { integer: 899, numeral: "DCCCXCIX"}
+        { integer: 899, numeral: "DCCCXCIX"},
+        { integer: 900, numeral: "DM"}
     ].forEach(({integer,numeral}) => {
         it(`converts ${integer} to ${numeral}`, () => {
             assert.strictEqual(num.convertToRoman(integer), numeral);
