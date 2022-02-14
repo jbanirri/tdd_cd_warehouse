@@ -38,4 +38,8 @@ describe("Buy CD - Payment accepted", () => {
             delivery_address: "Los Banos"
         }, cd.shipping.shippingNote);
     })
+
+    it("adds CD to customer's purchase list" , () => {
+        assert.strictEqual(1, customer.purchaseList.length);
+    })
 })
