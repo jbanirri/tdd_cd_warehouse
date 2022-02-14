@@ -5,6 +5,11 @@ class Numeral {
         while(integer > 0) {
             let numeralVal = 'I';
 
+            if(integer === 4) {
+                decrease = integer;
+                numeralVal = 'IV';
+            }
+
             result = result.concat(numeralVal);
             integer -= decrease;
         }
