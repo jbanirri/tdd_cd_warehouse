@@ -17,7 +17,6 @@ class Numeral {
             let str = levels[i].str
             while(integer >= val) {
                 result = result.concat(str);
-
                 integer -= val;
             }
         }
