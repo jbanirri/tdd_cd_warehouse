@@ -22,7 +22,7 @@ describe("Buy CD - Payment accepted", () => {
     cd.buy(2, customer);
 
     it("deducts sale from CD stock", () => {
-        assert.strictEqual(1,cd.getStock()); 
+        assert.strictEqual(1,cd.stock); 
     })
 
     it("uses customer's credit card", () => {
@@ -41,5 +41,35 @@ describe("Buy CD - Payment accepted", () => {
 
     it("adds CD to customer's purchase list" , () => {
         assert.strictEqual(1, customer.purchaseList.length);
+    })
+})
+
+describe("Buy CD - Payment rejected", () => {
+    const payments = {
+        accepted : function(creditCard) {
+            if(creditCard.length != 19) {
+                return false;
+            }
+
+            this.creditCard = creditCard;
+            return true;
+        }
+    };
+    const shipping = {
+        generateNotes : function(shippingNote) {
+            this.shippingNote = shippingNote
+        }
+    };
+    const cd = new CD(payments, shipping, 3, "The Beatles", "Help!");
+    const customer = {
+        name: "PJ Sinohin",
+        address: "Los Banos",
+        creditCard: "1323-9472",
+        purchaseList: []
+    };
+    cd.buy(2, customer);
+
+    it("does NOT deduct sale from CD stock", () => {
+        assert.strictEqual(3,cd.stock); 
     })
 })

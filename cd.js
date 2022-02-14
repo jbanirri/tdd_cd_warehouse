@@ -8,7 +8,10 @@ class CD {
     }
 
     buy(quantity, customer) {
-        this.payments.accepted(customer.creditCard);
+        let paymentResult = this.payments.accepted(customer.creditCard);
+
+        if(!paymentResult) return;
+
         this.stock -= quantity;
 
         // generate shipping notes
@@ -20,6 +23,14 @@ class CD {
             delivery_address: customer.address
         }
         this.shipping.generateNotes(shippingNote);
+
+        // Update customer purchase list
+        let item = {
+            title: this.title,
+            artist: this.artist,
+            quantity: quantity
+        }
+        customer.purchaseList.push(item)
     }
 
     getStock() {
