@@ -12,4 +12,8 @@ describe("Convert interger to roman numerals", () => {
     it("converts 2 to II", () => {
         assert.strictEqual(numeral.convertToRoman(2), 'II');
     })
+
+    it("converts 3 to III", () => {
+        assert.strictEqual(numeral.convertToRoman(3), 'III');
+    })
 })
