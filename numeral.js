@@ -6,7 +6,11 @@ class Numeral {
             let numeralVal = 'I';
             decrease = 1
 
-            if(integer >= 400) {
+            if(integer >= 500) {
+                decrease = 500;
+                numeralVal = 'D';
+            }
+            else if(integer >= 400) {
                 decrease = 400;
                 numeralVal = 'CD';
             }
