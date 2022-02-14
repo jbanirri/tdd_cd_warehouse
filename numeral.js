@@ -1,11 +1,11 @@
 class Numeral {
     convertToRoman(integer) {
         let levels = [
-            // { val: 1000, str: "M" },
-            // { val: 500, str: "D" },
-            // { val: 100, str: "C" },
-            // { val: 50, str: "L" },
-            // { val: 10, str: "X" },
+            { val: 1000, str: "M" },
+            { val: 500, str: "D" },
+            { val: 100, str: "C" },
+            { val: 50, str: "L" },
+            { val: 10, str: "X" },
             { val: 5, str: "V" },
             { val: 1, str: "I" },
             { val: 0, str: "" }
@@ -24,7 +24,7 @@ class Numeral {
             let nextStr = levels[i+1].str
             if(integer == val - nextVal) {
                 result = result.concat(nextStr+str);
-                integer = integer - val - nextVal;
+                integer -= (val - nextVal);
             }
         }
 
