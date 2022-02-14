@@ -12,7 +12,14 @@ class CD {
         this.stock -= quantity;
 
         // generate shipping notes
-        this.shipping.generateNotes(this.artist, this.title, quantity, customerInfo.name, customerInfo.address);
+        let shippingNote = {
+            artist: this.artist,
+            title: this.title,
+            quantity: quantity,
+            customer_name: customerInfo.name,
+            delivery_address: customerInfo.address
+        }
+        this.shipping.generateNotes(shippingNote);
     }
 
     getStock() {

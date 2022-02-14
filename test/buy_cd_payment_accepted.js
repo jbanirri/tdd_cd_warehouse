@@ -8,14 +8,8 @@ describe("Buy CD - Payment accepted", () => {
         return true;
     }};
     const shipping = {
-        generateNotes : function(artist, title, quantity, customerName, deliveryAddress) {
-            this.shippingNote = {
-                artist: artist,
-                title: title,
-                quantity: quantity,
-                customer_name: customerName,
-                delivery_address: deliveryAddress
-            }
+        generateNotes : function(shippingNote) {
+            this.shippingNote = shippingNote
         }
     };
     const cd = new CD(payments, shipping, 3, "The Beatles", "Help!");
