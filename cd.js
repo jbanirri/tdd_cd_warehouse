@@ -10,7 +10,7 @@ class CD {
     }
 
     getStock() {
-        return this.stock;
+        return this.stock; 
     }
 }
 

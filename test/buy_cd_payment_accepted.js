@@ -12,7 +12,7 @@ describe("Buy CD - Payment accepted", () => {
     cd.buy(2, creditCard);
 
     it("deducts sale from CD stock", () => {
-        assert.strictEqual(1,cd.getStock());
+        assert.strictEqual(1,cd.getStock()); 
     })
 
     it("uses customer's credit card", () => {
