@@ -13,19 +13,20 @@ describe("Buy CD - Payment accepted", () => {
         }
     };
     const cd = new CD(payments, shipping, 3, "The Beatles", "Help!");
-    const customerInfo = {
+    const customer = {
         name: "PJ Sinohin",
         address: "Los Banos",
-        creditCard: "1323947238414"
+        creditCard: "1323947238414",
+        purchaseList: []
     };
-    cd.buy(2, customerInfo);
+    cd.buy(2, customer);
 
     it("deducts sale from CD stock", () => {
         assert.strictEqual(1,cd.getStock()); 
     })
 
     it("uses customer's credit card", () => {
-        assert.strictEqual(customerInfo.creditCard,payments.creditCard);
+        assert.strictEqual(customer.creditCard,payments.creditCard);
     })
 
     it("creates a shipping note", () => {

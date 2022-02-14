@@ -7,8 +7,8 @@ class CD {
         this.title = title;
     }
 
-    buy(quantity, customerInfo) {
-        this.payments.accepted(customerInfo.creditCard);
+    buy(quantity, customer) {
+        this.payments.accepted(customer.creditCard);
         this.stock -= quantity;
 
         // generate shipping notes
@@ -16,8 +16,8 @@ class CD {
             artist: this.artist,
             title: this.title,
             quantity: quantity,
-            customer_name: customerInfo.name,
-            delivery_address: customerInfo.address
+            customer_name: customer.name,
+            delivery_address: customer.address
         }
         this.shipping.generateNotes(shippingNote);
     }
