@@ -20,4 +20,12 @@ describe("Convert interger to roman numerals", () => {
     it("converts 4 to IV", () => {
         assert.strictEqual(numeral.convertToRoman(4), 'IV');
     })
+
+    it("converts 5 to V", () => {
+        assert.strictEqual(numeral.convertToRoman(5), 'V');
+    })
+
+    it("converts 6 to VI", () => {
+        assert.strictEqual(numeral.convertToRoman(6), 'VI');
+    })
 })
