@@ -1,9 +1,12 @@
 class Numeral {
     convertToRoman(integer) {
         let result = '';
+        let decrease = 1;
         while(integer > 0) {
-            result = result.concat('I');
-            integer -= 1;
+            let numeralVal = 'I';
+
+            result = result.concat(numeralVal);
+            integer -= decrease;
         }
 
         return result;
