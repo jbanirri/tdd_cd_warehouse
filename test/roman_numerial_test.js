@@ -9,7 +9,7 @@ describe("Convert interger to roman numerals", () => {
         { integer: 1, numeral: "I"},
         { integer: 2, numeral: "II"},
         { integer: 3, numeral: "III"},
-        // { integer: 4, numeral: "IV"},
+        { integer: 4, numeral: "IV"},
         // { integer: 5, numeral: "V"},
         // { integer: 6, numeral: "VI"},
         // { integer: 7, numeral: "VII"},

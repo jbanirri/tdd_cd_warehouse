@@ -6,7 +6,7 @@ class Numeral {
             // { val: 100, str: "C" },
             // { val: 50, str: "L" },
             // { val: 10, str: "X" },
-            // { val: 5, str: "V" },
+            { val: 5, str: "V" },
             { val: 1, str: "I" },
             { val: 0, str: "" }
         ];
@@ -18,6 +18,13 @@ class Numeral {
             while(integer >= val) {
                 result = result.concat(str);
                 integer -= val;
+            }
+
+            let nextVal = levels[i+1].val
+            let nextStr = levels[i+1].str
+            if(integer == val - nextVal) {
+                result = result.concat(nextStr+str);
+                integer = integer - val - nextVal;
             }
         }
 
