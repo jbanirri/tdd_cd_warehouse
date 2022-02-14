@@ -3,29 +3,22 @@ const Numeral = require("../numeral");
 
 describe("Convert interger to roman numerals", () => {
 
-    const numeral = new Numeral();
+    const num = new Numeral();
 
-    it("converts 1 to I", () => {
-        assert.strictEqual(numeral.convertToRoman(1), 'I');
+    [
+        { integer: 1, numeral: "I"},
+        { integer: 2, numeral: "II"},
+        { integer: 3, numeral: "III"},
+        { integer: 4, numeral: "IV"},
+        { integer: 5, numeral: "V"},
+        { integer: 6, numeral: "VI"},
+        { integer: 7, numeral: "VII"},
+        { integer: 8, numeral: "VIII"},
+        { integer: 9, numeral: "IX"}
+    ].forEach(({integer,numeral}) => {
+        it(`converts ${integer} to ${numeral}`, () => {
+            assert.strictEqual(num.convertToRoman(integer), numeral);
+        })
     })
-
-    it("converts 2 to II", () => {
-        assert.strictEqual(numeral.convertToRoman(2), 'II');
-    })
-
-    it("converts 3 to III", () => {
-        assert.strictEqual(numeral.convertToRoman(3), 'III');
-    })
-
-    it("converts 4 to IV", () => {
-        assert.strictEqual(numeral.convertToRoman(4), 'IV');
-    })
-
-    it("converts 5 to V", () => {
-        assert.strictEqual(numeral.convertToRoman(5), 'V');
-    })
-
-    it("converts 6 to VI", () => {
-        assert.strictEqual(numeral.convertToRoman(6), 'VI');
-    })
+    
 })

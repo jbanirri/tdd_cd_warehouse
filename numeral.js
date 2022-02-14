@@ -6,13 +6,17 @@ class Numeral {
             let numeralVal = 'I';
             decrease = 1
 
-            if(integer === 4) {
+            if(integer === 9) {
                 decrease = integer;
-                numeralVal = 'IV';
+                numeralVal = 'IX';
             }
             else if(integer >= 5) {
                 decrease = 5;
                 numeralVal = 'V';
+            }
+            else if(integer === 4) {
+                decrease = integer;
+                numeralVal = 'IV';
             }
 
             result = result.concat(numeralVal);
